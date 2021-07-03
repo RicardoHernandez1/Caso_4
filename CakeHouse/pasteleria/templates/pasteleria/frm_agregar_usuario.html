@@ -1,0 +1,188 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Custom CSS-->
+    <link href="css/style.css" rel="stylesheet">
+      <!--JavaScript-->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+      <!--FontAwesome-->
+      <script src="https://kit.fontawesome.com/6bb326207b.js" crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+    <title>Pasteleria Cake House</title>
+    <link rel="icon" href="IMG/LOGO.png" type="image/gif" sizes="16x16">
+    <style>
+
+      .titulo{
+        color:#ffffff;
+      }
+
+      .menu{
+
+        color:rgb(14, 5, 5);
+
+      }
+
+    </style>
+  </head>
+  <body style="background-image: url(IMG/c357826c8510cdfb78439343fefcac5d.png);"  >
+    <nav class="navbar navbar-expand-lg navbar-light" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; background-color: rgb(250, 206, 186);">
+      <div class="container-fluid">
+          <img src="img/logo.png" alt="logo" style="width: 70px;">
+        <a class="navbar-brand" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; margin-left: 1%;" href="#">Cake House</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left: 2%;">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contactenos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="login.html">Inicio de sesión</a></li>
+                <li><a class="dropdown-item" href="registro.html">Registrar</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <div >
+        <div style="width: 97%; border: black solid 0.5px; margin-left: 1%; background-color: rgb(253, 222, 222)">
+            <div style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; text-align: center;margin-top: 2%; font-weight: bold"><u>Registro de usuario</u>
+        </div>
+        <form action="{% url 'pasteleria:registrar_usuario' %}" method="POST" style="margin-top: 1.3%; margin-left: 2%; margin-right: 2%; font-size: 20px;">
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputNombre4" class="form-label">Nombres</label>
+              <input type="text" class="nombres form-control" name="nombres" placeholder="Scrappy Pepe" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputApellido4" class="form-label">Apellidos</label>
+              <input type="text" class="apellidoP form-control" name="apellidoP" placeholder="Saravia" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputApellido4" class="form-label">Apellidos</label>
+                <input type="text" class="apellidoM form-control" name="apellidoM" placeholder="Moraga" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputRut">Rut</label>
+                <input type="text" name="rut" minLength="9" maxLength="9" placeholder="Ej. 11111111 Si termina en K reemplaze por 1" class="rut form-control"/> <p id="error"></p>
+              </div>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCorreo" class="form-label">Correo</label>
+              <input type="email" class="email form-control" name="email" placeholder="ScrappyMoraga@gmail.com" required>
+            </div>
+            <div class="form-group col-md-1">
+                <label for="inputtext" class="form-label">Codigo</label>
+                <input type="text" class="form-control" name="inputtext" value="+569" readonly> 
+              </div>
+            <div class="form-group col-md-5">
+                <label for="inputTelefono" class="form-label">Telefono</label>
+                <input type="tel" class="telefono form-control" name="telefono" placeholder="12345678" pattern="[0-9]{4}[0-9]{4}" required>
+            </div>
+            <div class="form-group col-6">
+              <label for="inputAddress" class="form-label">Direccion</label>
+              <input type="text" class="direccion form-control" name="direccion" placeholder="Calle Falsa #123" required>
+            </div>
+            <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputNiveduc">Ciudad</label>
+                <select required name="region" class="region form-select">
+                  <option selected>Seleccionar...</option>
+                  <option>Arica y Parinacota</option>
+                  <option>Tarapacá</option>
+                  <option>Antofagasta</option>
+                  <option>Atacama</option>
+                  <option>Coquimbo</option>
+                  <option>Valparaíso</option>
+                  <option>Metropolitana de Santiago</option>
+                  <option>Libertador General Bernardo O’Higgins</option>
+                  <option>Maule</option>
+                  <option>Ñuble</option>
+                  <option>Biobío</option>
+                  <option>La Araucanía</option>
+                  <option>Los Ríos</option>
+                  <option>Los Lagos</option>
+                  <option>Metropolitana de Santiago</option>
+                  <option>Aysén del General Carlos Ibáñez del Campo</option>
+                  <option>Magallanes y la Antártica Chilena</option>
+                </select>
+              </div>
+            <div class="form-group col-md-6">
+              <label for="inputComuna">Comuna</label>
+              <select required name="comuna" class="comuna form-select" >
+                <option selected>Seleccionar</option>
+
+                <option>Isla de Maipo</option>
+
+                <option>Talagante</option>
+
+                <option>Lo Espejo</option>
+
+                <option>Peñaflor</option>
+
+                <option>Padre Hurtado</option>
+
+                <option>PAC</option>
+
+                <option>La Pincoya</option>
+
+                <option>Las Condes</option>
+
+                <option>Pudahuel</option>
+
+                <option>Buín</option>
+
+                <option>El Monte</option>
+
+                <option>La Cisterna</option>
+              </select>
+            </div>
+        </div>
+        <input type="submit" name="btnAceptar" class="btnAceptar btn btn-danger float-right" value="Enviar">
+      </div>
+    </form>
+    </div>
+    <br>
+
+</div>
+        <footer>
+            <p style="text-align: center; margin-top: 2%;">
+            &copy;Pasteleria Cake House. Todos los derechos reservados
+           </p>
+        </footer>
+    </body>
+</html>

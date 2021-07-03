@@ -1,0 +1,12 @@
+{% if listado_productos %}
+    <ul>
+        {% for p in listado_productos %}
+            <li> {{p.nombre}}</li>
+            <li> {{p.precio}}</li>
+            <li> {{p.descripcion}}</li>
+            <br>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay productos</p>
+{% endif %}
