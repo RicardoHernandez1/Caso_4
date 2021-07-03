@@ -13,6 +13,15 @@ def index(request):
 def frm_agregar_usuario(request):
         return render(request, 'pasteleria/frm_agregar_usuario.html')
 
+def mendocinos(request):
+    return render(request, 'pasteleria/mendocinos.html')
+
+def torta_sanjorge(request):
+    return render(request, 'pasteleria/torta_sanjorge.html')
+
+def caja_bombones(request):
+    return render(request, 'pasteleria/caja_bombones.html')
+
 def registrar_usuario(request):
     nombres = request.POST['nombres']
     apellidoP = request.POST['apellidoP']
@@ -26,12 +35,6 @@ def registrar_usuario(request):
     cliente = Cliente(nombres=nombres,apellidoP=apellidoP, apellidoM=apellidoM, rut=rut, email=email, telefono=telefono, direccion=direccion, comuna=comuna, region=region)
     cliente.save()
     return HttpResponseRedirect(reverse('pasteleria:index'))
-
-def mostrar_producto(request):
-    listado_productos = Producto.objects.all()
-    carrito = {'listado_productos': listado_productos}
-    return render(request, 'pasteleria/mostrar_productos.html', carrito)
-
     
 
 

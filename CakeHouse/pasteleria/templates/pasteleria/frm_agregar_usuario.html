@@ -50,7 +50,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-left: 2%;">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'pasteleria:index'%}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#">Productos</a>
@@ -88,11 +88,11 @@
               <input type="text" class="nombres form-control" name="nombres" placeholder="Scrappy Pepe" required>
             </div>
             <div class="form-group col-md-6">
-              <label for="inputApellido4" class="form-label">Apellidos</label>
+              <label for="inputApellido4" class="form-label">Apellidos Paterno</label>
               <input type="text" class="apellidoP form-control" name="apellidoP" placeholder="Saravia" required>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputApellido4" class="form-label">Apellidos</label>
+                <label for="inputApellido4" class="form-label">Apellidos Materno</label>
                 <input type="text" class="apellidoM form-control" name="apellidoM" placeholder="Moraga" required>
               </div>
               <div class="form-group col-md-6">
@@ -111,7 +111,7 @@
               </div>
             <div class="form-group col-md-5">
                 <label for="inputTelefono" class="form-label">Telefono</label>
-                <input type="tel" class="telefono form-control" name="telefono" placeholder="12345678" pattern="[0-9]{4}[0-9]{4}" required>
+                <input type="number" class="telefono form-control" name="telefono" minLength="8" maxLength="8" placeholder="12345678" pattern="[0-9]{4}[0-9]{4}" required>
             </div>
             <div class="form-group col-6">
               <label for="inputAddress" class="form-label">Direccion</label>
