@@ -7,6 +7,7 @@ class Cliente(models.Model):
     nombres      = models.CharField(max_length=50)
     apellidoP  = models.CharField(max_length=50)
     apellidoM  = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
     rut       = models.IntegerField()
     email    = models.CharField(max_length=50)
     telefono = models.IntegerField()

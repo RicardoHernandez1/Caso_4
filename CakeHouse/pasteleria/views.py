@@ -25,14 +25,15 @@ def caja_bombones(request):
 def registrar_usuario(request):
     nombres = request.POST['nombres']
     apellidoP = request.POST['apellidoP']
-    apellidoM = request.POST['apellidoM']    
+    apellidoM = request.POST['apellidoM'] 
+    password = request.POST['password']   
     rut = request.POST['rut'] 
     email = request.POST['email'] 
     telefono = request.POST['telefono']
     direccion = request.POST['direccion'] 
     comuna = request.POST['comuna'] 
     region = request.POST['region'] 
-    cliente = Cliente(nombres=nombres,apellidoP=apellidoP, apellidoM=apellidoM, rut=rut, email=email, telefono=telefono, direccion=direccion, comuna=comuna, region=region)
+    cliente = Cliente(nombres=nombres,apellidoP=apellidoP, apellidoM=apellidoM, password=password, rut=rut, email=email, telefono=telefono, direccion=direccion, comuna=comuna, region=region)
     cliente.save()
     return HttpResponseRedirect(reverse('pasteleria:index'))
     

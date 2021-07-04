@@ -24,7 +24,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     
     <title>Pasteleria Cake House</title>
-    <link rel="icon" href="IMG/LOGO.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href=" {% static 'pasteleria/IMG/LOGO.png' %}" type="image/gif" sizes="16x16">
     <style>
 
       .titulo{
@@ -42,7 +42,7 @@
   <body style="background-image: url(IMG/c357826c8510cdfb78439343fefcac5d.png);"  >
     <nav class="navbar navbar-expand-lg navbar-light" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; background-color: rgb(250, 206, 186);">
       <div class="container-fluid">
-          <img src="img/logo.png" alt="logo" style="width: 70px;">
+          <img src=" {% static 'pasteleria/IMG/LOGO.png' %}" alt="logo" style="width: 70px;">
         <a class="navbar-brand" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; margin-left: 1%;" href="#">Cake House</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -96,15 +96,19 @@
                 <input type="text" class="apellidoM form-control" name="apellidoM" placeholder="Moraga" required>
               </div>
               <div class="form-group col-md-6">
+                <label for="inputPassword">Contraseña</label>
+                <input type="password" class="password form-control" name="password" placeholder="moragapepe123" required>
+              </div>
+              <div class="form-group col-md-6">
                 <label for="inputRut">Rut</label>
                 <input type="text" name="rut" minLength="9" maxLength="9" placeholder="Ej. 11111111 Si termina en K reemplaze por 1" class="rut form-control"/> <p id="error"></p>
               </div>
+              <div class="form-group col-md-6">
+                <label for="inputCorreo" class="form-label">Correo</label>
+                <input type="email" class="email form-control" name="email" placeholder="ScrappyMoraga@gmail.com" required>
+              </div>
             </div>
             <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCorreo" class="form-label">Correo</label>
-              <input type="email" class="email form-control" name="email" placeholder="ScrappyMoraga@gmail.com" required>
-            </div>
             <div class="form-group col-md-1">
                 <label for="inputtext" class="form-label">Codigo</label>
                 <input type="text" class="form-control" name="inputtext" value="+569" readonly> 
@@ -118,8 +122,8 @@
               <input type="text" class="direccion form-control" name="direccion" placeholder="Calle Falsa #123" required>
             </div>
             <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputNiveduc">Ciudad</label>
+            <div class="form-group col-md-5">
+                <label for="inputNiveduc">Region</label>
                 <select required name="region" class="region form-select">
                   <option selected>Seleccionar...</option>
                   <option>Arica y Parinacota</option>
@@ -171,8 +175,8 @@
                 <option>La Cisterna</option>
               </select>
             </div>
+            <input type="submit" name="btnAceptar" class="btnAceptar btn btn-danger float-right" value="Enviar">
         </div>
-        <input type="submit" name="btnAceptar" class="btnAceptar btn btn-danger float-right" value="Enviar">
       </div>
     </form>
     </div>
