@@ -39,18 +39,18 @@
       #panel-dolar{
             background-color: rgb(250, 206, 186);
             border: black solid 0.5px;
-            width: 200px;
-            height: 100px;
+            width: 150px;
+            height: 70px;
             text-align: center;
         }
 
     </style>
   </head>
   <body style="background-color: rgb(250,206,186);">
-    <nav class="navbar navbar-expand-lg navbar-light" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; background-color: rgb(250, 206, 186);">
+    <nav class="navbar navbar-expand-lg navbar-light" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 23px; background-color: rgb(250, 206, 186);">
       <div class="container-fluid">
           <img src="{% static 'pasteleria/IMG/LOGO.png' %}" alt="logo" style="width: 70px;">
-        <a class="navbar-brand" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; margin-left: 1%;" href="#">Cake House</a>
+        <a class="navbar-brand" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 25px; margin-left: 1%;" href="#">Cake House</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,7 +84,7 @@
           <p id="dolar"></p>
       </div>
   
-      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="{% static 'pasteleria/JS/jquery-3.6.0.min.js' %}"></script>
       <script>
           $(document).ready(function(){
   
@@ -154,7 +154,7 @@
           <p>$13.000</p>
           <br>
           <div class="col-8">
-            <button type="button" class="btn btn-primary" style="margin-left: 60%;"> <a href="torta_sanjorge.html" style= "color: #ffffff"> Comprar</a></button>
+            <button type="button" class="btn btn-primary" style="margin-left: 60%;"> <a href="{% url 'pasteleria:torta_sanjorge' %}" style= "color: #ffffff"> Comprar</a></button>
         </div>
         </div>
       </div>
@@ -166,7 +166,7 @@
           <p>$10.000</p>
           <br>
           <div class="col-8">
-            <button type="button" class="btn btn-primary" style="margin-left: 60%;"> <a href="caja_bombones.html" style= "color: #ffffff"> Comprar</a></button>
+            <button type="button" class="btn btn-primary" style="margin-left: 60%;"> <a href="{% url 'pasteleria:caja_bombones' %}" style= "color: #ffffff"> Comprar</a></button>
         </div>
         </div>
       </div>
@@ -178,7 +178,7 @@
           <p>$1.000</p>
           <br>
           <div class="col-8">
-            <button type="button" class="btn btn-primary" style="margin-left: 60%;"> <a href="mendocinos.html" style= "color: #ffffff"> Comprar</a></button>
+            <button type="button" class="btn btn-primary" style="margin-left: 60%;"> <a href="{% url 'pasteleria:mendocinos' %}" style= "color: #ffffff"> Comprar</a></button>
         </div>
         </div>
       </div>
