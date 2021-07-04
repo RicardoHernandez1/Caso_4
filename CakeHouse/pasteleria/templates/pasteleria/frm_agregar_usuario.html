@@ -66,8 +66,8 @@
                   <i class="fas fa-user"></i>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="login.html">Inicio de sesión</a></li>
-                <li><a class="dropdown-item" href="registro.html">Registrar</a></li>
+                <li><a class="dropdown-item" href="{% url 'pasteleria:login' %}">Inicio de sesión</a></li>
+                <li><a class="dropdown-item" href="{% url 'pasteleria:frm_agregar_usuario' %}">Registrar</a></li>
               </ul>
             </li>
           </ul>

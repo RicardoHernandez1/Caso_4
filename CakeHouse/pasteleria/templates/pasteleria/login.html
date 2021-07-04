@@ -21,16 +21,15 @@
       <script src="https://kit.fontawesome.com/6bb326207b.js" crossorigin="anonymous"></script>
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
-    <title>Pastelería Cake House</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    
+    <title>Pasteleria Cake House</title>
     <link rel="icon" href="{% static 'pasteleria/IMG/LOGO.png' %}" type="image/gif" sizes="16x16">
-
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-
-<!-- Custom styles for this template -->
-    <link href="css/estilos.css" rel="stylesheet">
     <style>
 
+      .titulo{
+        color:#ffffff;
+      }
 
       .menu{
 
@@ -40,18 +39,11 @@
 
     </style>
   </head>
-
-
-  <body>
-    
-    
-
-  <body style="background-image: url(IMG/29940.png);">
-
-    <nav class="navbar navbar-expand-lg navbar-light" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 23px; background-color: rgb(250, 206, 186);">
+  <body style="background-image: url(IMG/c357826c8510cdfb78439343fefcac5d.png);">
+    <nav class="navbar navbar-expand-lg navbar-light" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; background-color: rgb(250, 206, 186);">
       <div class="container-fluid">
           <img src="{% static 'pasteleria/IMG/LOGO.png' %}" alt="logo" style="width: 70px;">
-        <a class="navbar-brand" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 25px; margin-left: 1%;" href="#">Cake House</a>
+        <a class="navbar-brand" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif; font-size: 30px; margin-left: 1%;" href="#">Cake House</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -82,35 +74,26 @@
         </div>
       </div>
     </nav>
-      <br>
-      <div class="card mb-3" style="max-width: 95%; margin-left: 2.5% ;border: black solid 1px; background-color: rgb(223, 227, 238);" >
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{% static 'pasteleria/IMG/Caja_de_Bombones.png' %}" alt="..." width="90%">
-          </div>
-          <div class="col-md-8" style= "font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif">
-            <div class="card-body">
-              <h5 class="card-title" style=" margin-left: 2%; font-size: 25px;">Caja de Bombones</h5>
-              <p class="card-text" style="text-align: justify; margin-left: 2% ; font-size: 20px;">Deliciosos bombones hechos a mano con toda la dulzura natural de las frutas e ingredientes seleccionados. Realizados en una lámina de frutas seleccionadas, rellenas con una combinación de sabores únicos. </p>
-              <p class="card-title" style=" margin-left: 2%; font-size: 20px;">Bombones Premium enriquecidos con los mejores rellenos, únicos y reconocibles, provocan siempre placer y asombro al paladar. Ganaches, Pralinés, rellenos toffes y Fruta.</p>
+    <div class="card" style="width: 18rem; margin-top: 10%; margin-left: auto; margin-right: auto;border: black solid 1px ;background-color: rgb(255,242,242);">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">Inicio de Sesion</h5>
+          <div class="col-md-12" style="margin-top: 25px;">
+          <form action="{% url 'pasteleria:index'%}">
+            <div class="form-group col-md-14">
+              <label for="inputRut">Rut</label>
+              <input type="text" name="rut" minLength="9" maxLength="9" placeholder="Ej. 11111111 Si termina en K reemplaze por 1" class="rut form-control"/> <p id="error"></p>
             </div>
-          </div>
+            </div>
+             <br>
+             <div class="form-group col-md-12">
+              <label for="inputPassword">Contraseña</label>
+              <input type="password" class="password form-control" name="password" placeholder="moragapepe123" required>
+            </div>
+              <br>
+                <input class="btn btn-primary" type="submit" value="Ingresar">
+                <a href="{% url 'pasteleria:frm_agregar_usuario' %}" class="card-link" style="float: right; margin-top: 7px;">Registrarse</a>
+            </form>
         </div>
       </div>
-
-
-
-
-      <footer>
-        <p style="text-align: center;">
-        &copy;Pasteleria Cake House. Todos los derechos reservados
-       </p>
-       </footer>
-  
- 
-    <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.6.0.min.js"></script>
-
-      
   </body>
 </html>
