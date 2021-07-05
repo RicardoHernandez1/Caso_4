@@ -18,47 +18,20 @@ from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-from pasteleria.models import Cliente, Producto
+from CakeHouse import views
 
-# Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ['url', 'username', 'email', 'is_staff']
-
-class ClienteSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Cliente
-        fields = ['nombres', 'apellidoP', 'apellidoM', 'password', 'rut', 'email', 'telefono', 'direccion', 'comuna', 'region']
-
-class ProductoSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Producto
-        fields = ['nombre', 'descripcion', 'precio']
-
-# ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
-class ClienteViewSet(viewsets.ModelViewSet):
-    queryset = Cliente.objects.all()
-    serializer_class = ClienteSerializer
-
-class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
-    serializer_class = ProductoSerializer
-
-# Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'Clientes', ClienteViewSet)
-router.register(r'Productos', ProductoViewSet)
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'Clientes', views.ClienteViewSet)
+router.register(r'Productos', views.ProductoViewSet)
 
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('pasteleria/', include ('pasteleria.urls')),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
+
