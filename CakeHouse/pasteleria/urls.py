@@ -11,5 +11,7 @@ urlpatterns = [
     path('torta_sanjorge', views.torta_sanjorge, name='torta_sanjorge'),
     path('caja_bombones', views.caja_bombones, name='caja_bombones'),
     path('login', views.login, name='login'),
+    path('iniciar_sesion', views.iniciar_sesion, name='iniciar_sesion'),
+
 ]
 

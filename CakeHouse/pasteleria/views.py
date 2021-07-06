@@ -2,6 +2,10 @@ from .models import Producto, Cliente
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as dj_login
+from django.shortcuts import get_object_or_404, render
+
 
 # Create your views here.
 
@@ -14,13 +18,38 @@ def frm_agregar_usuario(request):
         return render(request, 'pasteleria/frm_agregar_usuario.html')
 
 def mendocinos(request):
-    return render(request, 'pasteleria/mendocinos.html')
+    if request.user.has_perm('pasteleria.view_producto'):
+        return render(request, 'pasteleria/mendocinos.html')
+    else:
+        return HttpResponse ("No posee permisos para ver esta pagina")
 
 def torta_sanjorge(request):
-    return render(request, 'pasteleria/torta_sanjorge.html')
+    if request.user.has_perm('pasteleria.view_producto'):  
+        return render(request, 'pasteleria/torta_sanjorge.html')
+    else:
+        return HttpResponse ("No posee permisos para ver esta pagina")
 
 def caja_bombones(request):
-    return render(request, 'pasteleria/caja_bombones.html')
+    if request.user.has_perm('pasteleria.view_producto'):  
+        return render(request, 'pasteleria/caja_bombones.html')
+    else:
+        return HttpResponse ("No posee permisos para ver esta pagina")
+
+def iniciar_sesion(request):
+    usuario = request.POST["usuario"]
+    clave = request.POST["clave"]
+
+    user = authenticate(request, username=usuario, password=clave)
+
+    if user is not None:
+        dj_login(request, user)
+        return HttpResponseRedirect(reverse('pasteleria:index'))
+    else:
+        return HttpResponse("No se ingresaron datos validos")
+
+def login(request):
+    return render(request, 'pasteleria/login.html')
+
 
 def registrar_usuario(request):
     nombres = request.POST['nombres']
@@ -38,8 +67,7 @@ def registrar_usuario(request):
     return HttpResponseRedirect(reverse('pasteleria:index'))
 
 
-def login(request):
-    return render(request, 'pasteleria/login.html')
+
     
 
 
