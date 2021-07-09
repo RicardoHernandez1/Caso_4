@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+<div class="container my-5 text-center">
+    <button class="btn btn-danger w-100" onclick="traer()">Mostrar Productos</button>
+    <div class="mt-5" id="contenido">
+
+    </div>
+</div>
+
+<script>
+        var contenido = document.querySelector('#contenido')
+        function traer() {
+            fetch('http://127.0.0.1:8000/apiProductos/')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data['0'])
+                console.log(data['1'])
+                console.log(data['2'])
+
+                $("<p/>", {
+        html:'El nombre del Producto es: ' + data['0'].nombre + '<br>' +
+            'La descripcion del producto: ' + data['0'].descripcion + '<br>' +
+            'El precio del producto es es: ' + data['0'].precio + '<br>'+ '<br>'+
+
+            'El nombre del Producto es: ' + data['1'].nombre + '<br>' +
+            'La descripcion del producto: ' + data['1'].descripcion + '<br>' +
+            'El precio del producto es es: ' + data['1'].precio + '<br>'+ '<br>'+
+
+            'El nombre del Producto es: ' + data['2'].nombre + '<br>' +
+            'La descripcion del producto: ' + data['2'].descripcion + '<br>' +
+            'El precio del producto es es: ' + data['2'].precio + '<br>'
+
+
+
+
+
+    }).appendTo("body");
+
+            })
+        } 
+</script>
+
+    
+</body>
+</html>

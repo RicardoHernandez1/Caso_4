@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from rest_framework import permissions
 from CakeHouse.serializers import UserSerializer, GroupSerializer, ClienteSerializer, ProductoSerializer
 from pasteleria.models import Cliente, Producto
-
+from django.shortcuts import render
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')

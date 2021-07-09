@@ -66,6 +66,8 @@ def registrar_usuario(request):
     cliente.save()
     return HttpResponseRedirect(reverse('pasteleria:index'))
 
+def listar(request):
+    return render(request, 'pasteleria/Listar_api.html',)
 
 
     
